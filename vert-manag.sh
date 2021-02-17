@@ -1,3 +1,7 @@
+for wifi:
+it will restart the driver:
+/etc/init.d/network-manager restart
+
 
 solotion :
 -----------------------
