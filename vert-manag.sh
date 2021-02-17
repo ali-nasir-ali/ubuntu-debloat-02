@@ -1,5 +1,14 @@
 
+solotion :
+-----------------------
+main website for solutions:
+https://wiki.libvirt.org/page/Networking
 
+
+
+
+solotion :
+-----------------------
 Check Compatibility:
 $ grep -o 'vmx\|svm' /proc/cpuinfo
 Note: if nothing comes back check BIOS to make sure Virtualization. 
@@ -15,6 +24,24 @@ solotion :
 -----------------------
 best solution:
 https://wiki.debian.org/KVM
+
+
+
+solotion :
+-----------------------
+found at :
+https://www.linuxquestions.org/questions/linux-virtualization-and-cloud-90/virsh-failed-to-start-network-default-4175672429/
+
+virsh net-undefine default
+virsh net-destroy default
+virsh net-list
+systemctl enable --now libvirtd
+systemctl enable virtlogd.socket
+systemctl restart libvirtd.service
+cat default.xml
+virsh net-define default.xml
+virsh net-autostart default
+virsh net-start default
 
 
 solotion :
