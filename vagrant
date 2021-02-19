@@ -1,0 +1,48 @@
+ssh vagrant@192.168.121.113 -i ~/.ssh/id_vagra_01.pub
+
+
+to stop :
+vagrant suspend 
+vagrant halt 
+
+to resume:
+vagrant up
+vagrant resume
+
+to resume after changing boatstrap.sh:
+vagrant up --provision
+
+to delete:
+vagrant destroy 
+vagrant destroy -f
+
+to make vagrant file in a folder:
+vagrant init generic/ubuntu1804
+
+
+to download by having the terminal in the folder of box:
+vagrant up
+
+to see status:
+vagrant status
+
+to ssh into curent folder box:
+vagrant ssh
+
+to list all boxes:
+vagrant box list
+
+to remove from list and delete a box:
+vagrant box remove id
+
+
+
+if we change any specs on vagrant file we can reload it:
+vagrant reload
+
+
+to restart the wifi in debian hp:
+/etc/init.d/network-manager restart
+
+sudo apt install ./vlc.deb
+sudo dpkg -i vlc.deb
