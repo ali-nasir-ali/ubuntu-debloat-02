@@ -2,6 +2,9 @@ for wifi:
 it will restart the driver:
 /etc/init.d/network-manager restart
 
+to see what hardwear wifi on the machine:
+lspci -knn | grep Net -A2
+
 
 solotion :
 -----------------------
