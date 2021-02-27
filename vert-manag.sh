@@ -6,6 +6,9 @@ to see what hardwear wifi on the machine:
 lspci -knn | grep Net -A2
 lspci | grep -i wireless
 
+to see os:
+cat /etc/os-release
+
 
 solotion :
 -----------------------
