@@ -4,6 +4,7 @@ https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/10.
 -
 
 
+-------------
 
 # in setting keybord shortcuts
 
@@ -16,6 +17,7 @@ gnome-terminal
 ctrl alt t
 
 --------------
+
 # https://flatpak.org/setup/Debian/
 sudo apt install flatpak
 sudo apt install gnome-software-plugin-flatpak
@@ -23,4 +25,9 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 
 -------------
 
+# Binace
+binance Launch app
+ctrl alt b
+
+-------------
 
