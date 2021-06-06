@@ -18,6 +18,23 @@ do
 		sleep 20
 	fi	
 done
+---
+# updated a little for better perfomance
+
+#!/bin/bash
+while(true)
+do
+	if ! [ "$(ping -c 1 google.com)" ];
+	then
+		echo "Network Reset"
+		sudo systemctl restart network-manager
+                expect "[sudo] password for valerian: "
+                send "00"
+		sleep 20
+	fi
+done
+------------
+
 
 ----------
 ----------
