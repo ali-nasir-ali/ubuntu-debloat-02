@@ -10,26 +10,30 @@ at the bottom of new window click on Enable DNS over HTTPS and sellect cloudflar
 
 https://www.reddit.com/r/firefox/comments/a5evhr/configure_dns_over_https_in_firefox/
 
----
+-------
 
 Configure DNS Over HTTPS in Firefox
-
-This worked for me.
+--
 
 First, go to Firefox Options > General > Network Settings and check the box "Enable DNS over HTTPS". This will automatically throw two switches in about:config.
 
-network.trr.mode = 2
 
+This worked for me.
+Next, in about:config
+-
+network.trr.mode = 2  ( or 3 works )
+-
 network.trr.uri = https://mozilla.cloudflare-dns.com/dns-query
-
-Next, in about:config, set network.trr.bootstrapAddress to 1.1.1.1
-
+-
+set network.trr.bootstrapAddress to 1.1.1.1
+-
 Finally, set network.security.esni.enabled = true
-
+-
 Check your work by running all four tests at https://www.cloudflare.com/ssl/encrypted-sni/
+--------
 
 My laptop passed all four. I had earlier changed the DNS server addresses on Windows 10 to 1.1.1.1 and 1.0.0.1
-
+-
 A DNS leak test now shows an IP address from my VPN and a DNS address from Cloudflare.
 
 If you've been thinking about DNS issues, I hope this helps.
