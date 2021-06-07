@@ -1,0 +1,10 @@
+
+
+How to enable DNS-over-HTTPS in Firefox
+-
+in firefox click on meny > preferences > 
+go to dottom to nework settings > settings >
+at the bottom of new window click on Enable DNS over HTTPS and sellect cloudflare dns
+
+-------------------
+
