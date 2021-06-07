@@ -8,3 +8,73 @@ at the bottom of new window click on Enable DNS over HTTPS and sellect cloudflar
 
 -------------------
 
+https://www.reddit.com/r/firefox/comments/a5evhr/configure_dns_over_https_in_firefox/
+
+---
+
+Configure DNS Over HTTPS in Firefox
+
+This worked for me.
+
+First, go to Firefox Options > General > Network Settings and check the box "Enable DNS over HTTPS". This will automatically throw two switches in about:config.
+
+network.trr.mode = 2
+
+network.trr.uri = https://mozilla.cloudflare-dns.com/dns-query
+
+Next, in about:config, set network.trr.bootstrapAddress to 1.1.1.1
+
+Finally, set network.security.esni.enabled = true
+
+Check your work by running all four tests at https://www.cloudflare.com/ssl/encrypted-sni/
+
+My laptop passed all four. I had earlier changed the DNS server addresses on Windows 10 to 1.1.1.1 and 1.0.0.1
+
+A DNS leak test now shows an IP address from my VPN and a DNS address from Cloudflare.
+
+If you've been thinking about DNS issues, I hope this helps.
+
+---
+
+
+
+The curl wiki has a nice list of public DoH providers: https://github.com/curl/curl/wiki/DNS-over-HTTPS
+
+And in Nightly at least, under the "Enable DNS over HTTPS" checkbox there's a nice text field for setting a custom network.trr.uri
+
+
+------
+
+Why for some users setting network.trr.mode = 2 fails to work? I've set this to 2 and failed to pass the DNSSEC test. It only works for value set to 3 but not sure why.
+2
+User avatar
+level 2
+KRBT
+veteran 
+-er
+2 years ago
+
+0: Off by default
+1: Firefox will choose based on which is faster
+2: TRR preferred, fall back to DNS on failure
+3: TRR only, no DNS fallback
+5: TRR completely disabled
+
+Perhaps you're talking about the tests failing? Because it seems "3" is the most secure way to go, which is good.
+
+------
+
+I found this related post:
+
+r/firefox/comments/8b4u9z/with_dns_over_https_enabled_in_nightly_firefox/
+
+And this bug report:
+
+https://bugzilla.mozilla.org/show_bug.cgi?id=1450893
+
+So, it seems currently there's no safe solution.
+
+Tip: It is possible to solve the issue by setting network.trr.mode to 2 instead of 3.
+
+
+------
