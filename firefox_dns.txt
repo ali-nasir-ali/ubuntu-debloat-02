@@ -82,3 +82,16 @@ Tip: It is possible to solve the issue by setting network.trr.mode to 2 instead 
 
 
 ------
+
+
+how to backup an restorefirefox data manualy 
+go to the home select show hidden folders from the top left option bar 
+select the ./mozila/ folder and copy it where you want to copy it.
+
+restore : just copy the backup one and  replace the one in the filder 
+
+or we can go to the folder ./mozila/firefox/cmbxfn1n.default-esr/ 
+and just copy past it contents
+
+
+------
