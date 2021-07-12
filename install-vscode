@@ -16,3 +16,16 @@ sudo apt-get update
 sudo apt-get install code
 
 code
+
+
+# or if it does not work
+
+# install 
+https://code.visualstudio.com/download
+
+sudo apt-get update && sudo apt-get upgrade -y
+
+# sudo
+sudo apt install ./code 
+
+code
