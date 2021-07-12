@@ -1,4 +1,9 @@
-https://linuxize.com/post/how-to-install-visual-studio-code-on-debian-10/
+
+
+# https://linuxize.com/post/how-to-install-visual-studio-code-on-debian-10/
+# if the curl dont work
+# sudo apt-get install curl
+
 
 sudo apt-get update && sudo apt-get upgrade -y
 
